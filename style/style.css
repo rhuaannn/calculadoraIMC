@@ -45,14 +45,15 @@ body{
   display: flex;
   max-height: 55px;
   padding-top: 35px;
-  color: rgb(7, 117, 66);
+  color: rgb(12, 230, 15);
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 .error {
- padding-top: 15px;
-  color: rgb(226, 13, 13);
+  
+  color: rgb(3, 3, 3);
+  background-color: rgb(230, 14, 14);
   
   
 }

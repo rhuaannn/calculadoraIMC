@@ -10,21 +10,25 @@
     const result = document.querySelector('#resultado');
     const msgError = document.querySelector('.error');
     const formulario = document.querySelector("#imc")
+   
 
     botao.addEventListener("click", (peso,altura,x)=>{
-        
-      if (inputPeso.value === "" || inputAltura.value === "" ) {
-        msgError.innerHTML = 'Digite somente números'
+      if (inputPeso.value === ""  ) {
+        msgError.innerHTML = 'Digite peso válido.'
         
         setInterval (() => {
           msgError.textContent = "";
         },  3000)
-
+      }else if (inputAltura.value ==""){
+        msgError.innerHTML = 'Digite uma altura válido.'
         
-      }else{
+        setInterval (() => {
+          msgError.textContent = "";
+        },  3000)
+      }
+      
+      else{
         result.textContent = inputPeso.value / inputAltura.value ** 2
-       
-            result.textContent  
           setInterval(() => {
             result.textContent = ""
          
@@ -33,9 +37,3 @@
         
       }})
  
-result.addEventListener("click",(result)=>{
-    if(result >=18.5){
-      result.textContent = "Você está acima do peso"
-      console.log("clicked++")
-    }
-})

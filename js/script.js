@@ -6,14 +6,11 @@
 
   const Weight = document.querySelector("#inputPeso");
 
-  const heigth = document.querySelector("#inputPeso");
+  const heigth = document.querySelector("#inputAltura");
 
   const resultImc = document.querySelector ('#msgResult');
 
   const erro = document.querySelector(".error");
-
-  
- 
 
   button.addEventListener("click", function(event){
     event.preventDefault()
@@ -47,26 +44,26 @@
         return
     }
 
-    getImc =(result)=>{
-      const nivelIMC = ['Peso normal.','Obesidade detectada.','Abaixo do peso.']
+  const  getImc =(result)=>{
+      const nivelIMC = ['Peso ideal.','Acima do peso.','Abaixo do peso.']
+     // result += result;
 
-        if(result >= 25) return nivelIMC[1];
-        if(result >=18.6)  return nivelIMC[0];
-        if(result <= 18.5)  return nivelIMC[2];
-
-        resultImc.textContent = `IMC: ${nivelIMC} `
-       // result.textContent =  inputPeso.value / inputAltura.value **2
+        if(result >=25.5)  return resultImc.innerText = `${nivelIMC[1]}` ;
+        if(result >= 18.6) return  resultImc.innerText = `${nivelIMC[0]}` ;
+        if(result <= 18.5)  return resultImc.innerText = `${nivelIMC[2]}` ;
+       
          
-        setInterval(() => {
-          resultImc.innerHTML = ''
-        }, 9000);
+       
       }
-      getImc ()
+      getImc (Number(Weight.value / heigth.value **2))
+      setInterval(() => {
+        resultImc.innerHTML = ''
+      }, 9000);
         
-    showResult =(Weight,heigth)=>{
+   showResult =(Weight,heigth)=>{
 
-        result.textContent = inputPeso.value / inputAltura.value **2
-          console.log(resultImc,result)
+        result.innerText = inputPeso.value / inputAltura.value **2
+      
         setInterval(() => {
           result.innerHTML = ''
         }, 9000);
